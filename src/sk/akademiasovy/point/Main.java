@@ -1,6 +1,7 @@
 package sk.akademiasovy.point;
 
 import sk.akademiasovy.date.MyDate;
+import sk.akademiasovy.other.MyClass;
 
 public class Main {
     public static void main(String[] args) {
@@ -22,7 +23,17 @@ public class Main {
         Object o1=new Point();
         Point p3=new Point3D(2,8,7);
 
-        System.out.println(p3.getDistance());
+
+
+        Point bod15 = new Point(2,5);
+        Line line=new Line(bod15, new Point(10,4));
+
+        Line line2 = new Line(1,3,4,6);
+
+        System.out.println("Length of line 1 is:"+line.getLenght(8,6));
+        line2.getMiddleOfLine().print();
+
+        MyDate myDate = new MyDate();
         Point3D p33=(Point3D)p3;
         //Point3D p34=new Point();
         ((Point3D) p3).test();  // pretypovanie
@@ -38,23 +49,13 @@ public class Main {
             p.generateRandomCoord();
             arr[i]=p;
         }
-        for(Geometry g:arr){
-            ((Point3D)g).print();
-        }
-
-        Point bod15 = new Point(2,5);
-        Line line=new Line(bod15, new Point(10,4));
-
-        Line line2 = new Line(1,3,4,6);
-
-        System.out.println("Length of line 1 is:"+line.getLenght(8,6));
-        line2.getMiddleOfLine().print();
-
-        MyDate myDate = new MyDate();
         myDate.today();
         myDate.today2();
 
+        MyClass myClass=new MyClass();
+        System.out.println(myClass.isEmailValid("janko@gmail.com"));
+        System.out.println(myClass.isEmailValid("janko@@gmail.com"));
 
-
+        System.out.println(MyClass.getGender("970313/8258"));
     }
 }
