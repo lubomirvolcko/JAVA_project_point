@@ -2,6 +2,9 @@ package sk.akademiasovy.point;
 
 import sk.akademiasovy.date.MyDate;
 import sk.akademiasovy.other.MyClass;
+import sk.akademiasovy.sk.akademiasovy.abstrakt.Person;
+import sk.akademiasovy.sk.akademiasovy.abstrakt.Student;
+import sk.akademiasovy.sk.akademiasovy.abstrakt.Teacher;
 
 public class Main {
     public static void main(String[] args) {
@@ -58,4 +61,15 @@ public class Main {
 
         System.out.println(MyClass.getGender("970313/8258"));
     }
+
+    Person p = new Teacher();
+
+    ((Teacher) p).getSalary(2200);
+
+    Person s = new Student();
+    if(s instanceof Teacher)
+    ((Teacher) s).getSalary(2200);
+
+    Object ppp = new Student();
+
 }
